@@ -48,11 +48,11 @@ const InGame = () => {
             alt=""
           />
           <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
-            <span className=" font-extrabold text-xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
+            <span className=" font-extrabold text-3xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
             iniGamesWorl
-            <span className="font-extrabold text-xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
+            <span className="font-extrabold text-3xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
               D
             </span>{" "}
           </h1>
@@ -143,54 +143,63 @@ const InGame = () => {
         {/* dice game section  */}
         <div className="flex justify-center mt-4">
           <div>
-             <div className={`text-black text-4xl ml-10 ${showText?"hidden":"block"}  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2`}>
-              <h1>Dice Game</h1>
-            </div>
-            <div className={`text-black ${showText?"block":"hidden"} text-4xl ml-22  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2`}>
-              <h1>Dice Game</h1>
-            </div>
-
-
-                <div
-          className={` bg-zinc-800 text-white p-4 rounded mt-4 mx-5 ${
-            showText ? "block" : "hidden"
-          } `}
-        >
-          <h1 className="text-4xl font-semibold mb-5">How To Play Dice Game</h1>
-          <p>Selcet Any Number</p>
-          <p>Click On Dice Image</p>
-          <p>
-            After click on dice if selected number is equal to dice number you
-            will get same point as dice{" "}
-          </p>
-          <p>If you get wrong guess then 2 point will be dedcuted </p>
-        </div>
-           
-
-            <img
-              className="cursor-pointer"
-              onClick={rollDice}
-              src={`./project-two-imgs/dice_${
-                showText ? "hidden" : currentDice
-              }.png`}
-              alt=""
-            />
-         
-            <p
-              className={` ${
+            <div
+              className={`text-black text-4xl ml-10 ${
                 showText ? "hidden" : "block"
-              } text-center font-semibold text-2xl`}
+              }  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2`}
             >
-              Click On Dice To Roll
-            </p>
-            <div className={` ${showText ? "hidden" : "block"} text-center `}>
-              <button
-                onClick={resetGame}
-                className="border-2 py-1 mt-5 px-8 rounded cursor-pointer active:scale-90"
-              >
-                Reset Score
-              </button>
+              <h1>Dice Game</h1>
             </div>
+            <div
+              className={`text-black ${
+                showText ? "block" : "hidden"
+              } text-4xl ml-22  sm:ml-50 md:ml-60 sm:text-4xl font-bold lg:text-5xl mb-2`}
+            >
+              <h1>Dice Game</h1>
+            </div>
+
+            <div
+              className={` bg-zinc-800 text-white p-4 rounded mt-4 mx-5 ${
+                showText ? "block" : "hidden"
+              } `}
+            >
+              <h1 className="text-4xl font-semibold mb-5">
+                How To Play Dice Game
+              </h1>
+              <p>Selcet Any Number</p>
+              <p>Click On Dice Image</p>
+              <p>
+                After click on dice if selected number is equal to dice number
+                you will get same point as dice{" "}
+              </p>
+              <p>If you get wrong guess then 2 point will be dedcuted </p>
+            </div>
+
+            <div className={`${showText ? "hidden" : "block"}`}>
+              <img
+                className="cursor-pointer "
+                onClick={rollDice}
+                src={`./project-two-imgs/dice_${currentDice}.png`}
+                alt=""
+              />
+
+              <p
+                className={` ${
+                  showText ? "hidden" : "block"
+                } text-center font-semibold text-2xl`}
+              >
+                Click On Dice To Roll
+              </p>
+              <div className={` ${showText ? "hidden" : "block"} text-center `}>
+                <button
+                  onClick={resetGame}
+                  className="border-2 py-1 mt-5 px-8 rounded cursor-pointer active:scale-90"
+                >
+                  Reset Score
+                </button>
+              </div>
+            </div>
+
             <div className="text-center">
               <button
                 onClick={() => setShowText(!showText)}
@@ -204,19 +213,13 @@ const InGame = () => {
                 onClick={() => setShowText(!showText)}
                 className={`bg-black ${
                   showText ? "block" : "hidden"
-                } text-white py-1 px-8 mt-2 rounded cursor-pointer active:scale-90 ml-25 sm:ml-12 md:ml-12`}
+                } text-white py-1 px-8 mt-2 rounded cursor-pointer active:scale-90 ml-25 sm:ml-55 md:ml-65 lg:ml-70`}
               >
                 Hide Rules
               </button>
             </div>
           </div>
         </div>
-
-
-
-
-
-
       </div>
       {/* footer section  */}
       <footer className="bg-linear-to-r from-yellow-200 via-amber-400 to-orange-600 text-zinc-950 py-10 mt-5 ">
