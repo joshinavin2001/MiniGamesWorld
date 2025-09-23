@@ -70,7 +70,7 @@ const HomePage = ({ startTicTac, startDice, startBubble }) => {
         </a>
       </div>
       {/* main section  */}
-      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-98 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
+      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-92 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
         <div className="flex justify-center items-center  mb-4 mr-5  sm:mb-10 text-center">
           <img className="w-25 h-25" src="./homePageImg/BulbLogo.png" alt="" />
           <h1 className="sm:text-5xl text-2xl font-bold bg-gradient-to-r from-yellow-300 to-black bg-clip-text text-transparent italic">
