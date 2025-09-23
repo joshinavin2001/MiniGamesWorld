@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContact, }) => {
+const AboutTicTac = ({ startTicTac }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -32,11 +32,12 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
         </div>
         <div>
           <div className="hidden md:block text-xl font-bold mt-4">
-            <a onClick={startAbout} className="mr-5 hover:text-green-700" href="#">
-              About
-            </a>
-            <a onClick={startContact} className="mr-5 hover:text-green-700" href="#">
-              Contact
+            <a
+              onClick={startTicTac}
+              className="mr-5 hover:text-green-700"
+              href="#"
+            >
+              InGame
             </a>
           </div>
 
@@ -51,78 +52,67 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
         </div>
       </nav>
       {/* nav toogle section  */}
-       <div className={` ${
-          isOpen ? "block" : "hidden"
-        }  md:hidden text-xl text-end font-bold bg-zinc-800 text-white py-2 pl-2`}>
-            <a onClick={startAbout} className="mr-5 block hover:text-green-700" href="#">
-              About
-            </a>
-            <a onClick={startContact} className="mr-5 block hover:text-green-700" href="#">
-              Contact
-            </a>
-          </div>
 
+      <div
+        className={` ${
+          isOpen ? "block" : "hidden"
+        }  md:hidden text-end text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
+      >
+        <a
+          onClick={startTicTac}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
+          InGame
+        </a>
+      </div>
 
       {/* main section  */}
-      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-92 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
-        <div className="flex justify-center items-center  mb-4 mr-5  sm:mb-10 text-center">
-          <img className="w-25 h-25" src="./homePageImg/BulbLogo.png" alt="" />
-          <h1 className="sm:text-5xl text-2xl font-bold bg-gradient-to-r from-yellow-300 to-black bg-clip-text text-transparent italic">
-            Welcome to MiniGamesWorLD
-          </h1>
-          <img
-            className="w-12 h-12 mt-2"
-            src="./homePageImg/SmallGameLogo.png"
-            alt=""
-          />
+      <div className=" bg-white w-96 sm:w-150  md:w-200 h-230 sm:h-200 md:h-200 lg:h-200 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
+        <div className="flex justify-center">
+          <h1 className="font-bold text-4xl mt-4 underline ">About</h1>
         </div>
-        {/* all games section  */}
-        <section className="w-1/2 ml-18 sm:flex sm:justify-evenly  sm:w-auto sm:mx-0">
-          <div className="text-center h-70 w-54 border-2 rounded py-2 mb-5 sm:mb-0">
-            <h1 className="text-3xl font-bold">Dice Game</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/dice_Game.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startDice}
-              className="bg-zinc-900 text-xl my-2 text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
-          </div>
-
-          <div className="text-center h-70 w-54 border-2 py-2 mb-5 sm:mb-0 rounded ">
-            <h1 className="text-3xl font-bold">TicTacToe</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/tictacLogo.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startTicTac}
-              className="bg-zinc-900 text-xl mt-2 text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
-          </div>
-
-          <div className="text-center h-70 w-54 border-2 mb-5 sm:mb-0 rounded ">
-            <h1 className="text-3xl font-bold">Bubble Game</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/bubbleLogo.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startBubble}
-              className="bg-zinc-900 text-xl text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
-          </div>
-        </section>
+        <div className="mx-4 my-5">
+          <h1 className="font-bold lg:text-3xl sm:text-2xl text-2xl">
+            About - TicTacToe
+          </h1>
+          <p className="text-md sm:text-lg lg:text-xl">
+            Tic-Tac-Toe is a classic two-player game played on a 3x3 grid.
+            Players take turns marking X or O, aiming to align three symbols
+            horizontally, vertically, or diagonally. It teaches strategy and
+            critical thinking. Simple yet engaging, it's often a child's first
+            introduction to competitive and logical gameplay.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+            🕹️ How to Play TicTacToe
+          </h1>
+        </div>
+        <div className="mx-5 mt-4">
+          <h1 className="text-xl font-bold">1. Draw the Grid</h1>
+          <p>Draw a 3x3 grid (two vertical and two horizontal lines).</p>
+          <h1 className="text-xl font-bold">2. Choose Symbols</h1>
+          <p>One player is X, the other is O.</p>
+          <h1 className="text-xl font-bold">3. Decide Who Goes First</h1>
+          <p>Flip a coin or agree who will go first.</p>
+          <h1 className="text-xl font-bold">4. Take Turns</h1>
+          <p>
+            Players take turns placing their symbol (X or O) in an empty square.
+          </p>
+          <h1 className="text-xl font-bold">5. Aim to Align Three</h1>
+          <p>Try to get three of your symbols in a row:</p>
+          <p>Horizontally</p>
+          <p>Vertically</p>
+          <p>Or diagonally</p>
+          <h1 className="text-xl font-bold">Block Your Opponent</h1>
+          <p>
+            Prevent your opponent from getting three in a row by blocking them.
+          </p>
+          <h1 className="text-xl font-bold">Check for a Win or Draw</h1>
+          <p>The first to get three in a row wins.</p>
+          <p>If all squares are filled with no winner, it's a draw.</p>
+        </div>
       </div>
       {/* footer section  */}
       <footer className="bg-linear-to-r from-yellow-200 via-amber-400 to-orange-600 text-zinc-950 py-10 mt-5 ">
@@ -188,4 +178,4 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
   );
 };
 
-export default HomePage;
+export default AboutTicTac;

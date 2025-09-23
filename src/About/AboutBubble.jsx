@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContact, }) => {
+const AboutBubble = ({ startBubble }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -32,11 +32,12 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
         </div>
         <div>
           <div className="hidden md:block text-xl font-bold mt-4">
-            <a onClick={startAbout} className="mr-5 hover:text-green-700" href="#">
-              About
-            </a>
-            <a onClick={startContact} className="mr-5 hover:text-green-700" href="#">
-              Contact
+            <a
+              onClick={startBubble}
+              className="mr-5 hover:text-green-700"
+              href="#"
+            >
+              InGame
             </a>
           </div>
 
@@ -51,78 +52,75 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
         </div>
       </nav>
       {/* nav toogle section  */}
-       <div className={` ${
-          isOpen ? "block" : "hidden"
-        }  md:hidden text-xl text-end font-bold bg-zinc-800 text-white py-2 pl-2`}>
-            <a onClick={startAbout} className="mr-5 block hover:text-green-700" href="#">
-              About
-            </a>
-            <a onClick={startContact} className="mr-5 block hover:text-green-700" href="#">
-              Contact
-            </a>
-          </div>
 
+      <div
+        className={` ${
+          isOpen ? "block" : "hidden"
+        }  md:hidden text-end text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
+      >
+        <a
+          onClick={startBubble}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
+          InGame
+        </a>
+      </div>
 
       {/* main section  */}
-      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-92 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
-        <div className="flex justify-center items-center  mb-4 mr-5  sm:mb-10 text-center">
-          <img className="w-25 h-25" src="./homePageImg/BulbLogo.png" alt="" />
-          <h1 className="sm:text-5xl text-2xl font-bold bg-gradient-to-r from-yellow-300 to-black bg-clip-text text-transparent italic">
-            Welcome to MiniGamesWorLD
-          </h1>
-          <img
-            className="w-12 h-12 mt-2"
-            src="./homePageImg/SmallGameLogo.png"
-            alt=""
-          />
+      <div className=" bg-white w-96 sm:w-150  md:w-200 h-250 sm:h-200 md:h-180 lg:h-170 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
+        <div className="flex justify-center">
+          <h1 className="font-bold text-4xl mt-4 underline ">About</h1>
         </div>
-        {/* all games section  */}
-        <section className="w-1/2 ml-18 sm:flex sm:justify-evenly  sm:w-auto sm:mx-0">
-          <div className="text-center h-70 w-54 border-2 rounded py-2 mb-5 sm:mb-0">
-            <h1 className="text-3xl font-bold">Dice Game</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/dice_Game.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startDice}
-              className="bg-zinc-900 text-xl my-2 text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
+        <div className="mx-4 my-5">
+          <h1 className="font-bold lg:text-3xl sm:text-2xl text-2xl">
+            About - Bubble Game
+          </h1>
+          <p className="text-md sm:text-lg lg:text-xl">
+            About the Bubble Game The Bubble Game is a fun and fast-paced
+            clicking game where players pop as many bubbles as possible within a
+            time limit. Bubbles appear randomly on the screen and disappear
+            quickly, so quick reflexes and sharp eyes are the key to scoring
+            high. It's simple, colorful, and perfect for a quick gaming break.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+            🫧 How to Play: Bubble Game
+          </h1>
+        </div>
+        <div>
+          <div className="mx-5 mt-5">
+            <h1 className="text-xl font-bold">1. Start the Game</h1>
+            <p>
+              Once you hit "Start," a 60-second timer begins. Your goal is to
+              score as many points as possible before time runs out.
+            </p>
+            <h1 className="text-xl font-bold">2. Check the "Hit" Number</h1>
+            <p>
+              At the top of the screen, you'll see a "Hit" number — for example,
+              4. This is the number you need to find and click on.
+            </p>
+            <h1 className="text-xl font-bold">3. Click the Correct Bubble</h1>
+            <p>
+              Bubbles with random numbers will appear on the screen. Tap or
+              click the bubble that matches the "Hit" number.
+            </p>
+            <h1 className="text-xl font-bold">4. Scoring</h1>
+            <p>✅ If you click the correct number, you score +10</p>
+            <p>❌ If you click the wrong number, you lose -10 points.</p>
+            <h1 className="text-xl font-bold">5. Keep Going!</h1>
+            <p>
+              After every click (correct or wrong), the "Hit" number changes —
+              so stay sharp and keep matching!
+            </p>
+            <h1 className="text-xl font-bold">6. Game Over</h1>
+            <p>
+              When the timer hits zero, your final score will be displayed. Can
+              you beat your high score?
+            </p>
           </div>
-
-          <div className="text-center h-70 w-54 border-2 py-2 mb-5 sm:mb-0 rounded ">
-            <h1 className="text-3xl font-bold">TicTacToe</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/tictacLogo.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startTicTac}
-              className="bg-zinc-900 text-xl mt-2 text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
-          </div>
-
-          <div className="text-center h-70 w-54 border-2 mb-5 sm:mb-0 rounded ">
-            <h1 className="text-3xl font-bold">Bubble Game</h1>
-            <img
-              className=" m-auto h-44 w-44"
-              src="./homePageImg/bubbleLogo.png"
-              alt="Dice Game"
-            />
-            <button
-              onClick={startBubble}
-              className="bg-zinc-900 text-xl text-white py-1 px-6 rounded active:scale-95 cursor-pointer"
-            >
-              Play Now
-            </button>
-          </div>
-        </section>
+        </div>
       </div>
       {/* footer section  */}
       <footer className="bg-linear-to-r from-yellow-200 via-amber-400 to-orange-600 text-zinc-950 py-10 mt-5 ">
@@ -188,4 +186,4 @@ const HomePage = ({ startTicTac, startDice, startBubble, startAbout, startContac
   );
 };
 
-export default HomePage;
+export default AboutBubble;

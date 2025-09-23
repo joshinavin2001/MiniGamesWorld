@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const InGame = () => {
+const InGame = ({ inHome, inDice }) => {
   const [isOpen, setOpen] = useState(false);
   const arrNum = [1, 2, 3, 4, 5, 6];
   const [selectedNumber, setSelectedNum] = useState();
@@ -64,14 +64,11 @@ const InGame = () => {
         </div>
         <div>
           <div className="hidden md:block text-xl font-bold mt-4">
-            <a className="mr-5 hover:text-green-700" href="#">
+            <a onClick={inHome} className="mr-5 hover:text-green-700" href="#">
               Home
             </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              About
-            </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              Contact
+            <a onClick={inDice} className="mr-5 hover:text-green-700" href="#">
+              AboutGame
             </a>
           </div>
 
@@ -86,19 +83,25 @@ const InGame = () => {
         </div>
       </nav>
       {/* nav toogle section  */}
+
       <div
         className={` ${
           isOpen ? "block" : "hidden"
         }  md:hidden text-xl font-bold bg-zinc-800 text-end text-white py-2 pl-2`}
       >
-        <a className="mr-5 block hover:text-yellow-200" href="#">
+        <a
+          onClick={inHome}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
           Home
         </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          About
-        </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          Contact
+        <a
+          onClick={inDice}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
+          AboutGame
         </a>
       </div>
 

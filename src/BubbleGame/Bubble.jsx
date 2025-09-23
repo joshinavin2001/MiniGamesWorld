@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Bubble = () => {
+const Bubble = ({ inHome, inBubble }) => {
   const [isOpen, setOpen] = useState(false);
   const allBubbles = 80;
   const [makeBubbles, setMakeBubbles] = useState(Array(allBubbles).fill(""));
@@ -74,7 +74,7 @@ const Bubble = () => {
             src="./homePageImg/gameLogo.png"
             alt=""
           />
-           <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
+          <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
             <span className=" font-extrabold text-3xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
@@ -91,14 +91,15 @@ const Bubble = () => {
         </div>
         <div>
           <div className="hidden md:block text-xl font-bold mt-4">
-            <a className="mr-5 hover:text-green-700" href="#">
+            <a onClick={inHome} className="mr-5 hover:text-green-700" href="#">
               Home
             </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              About
-            </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              Contact
+            <a
+              onClick={inBubble}
+              className="mr-5 hover:text-green-700"
+              href="#"
+            >
+              AboutGame
             </a>
           </div>
 
@@ -113,21 +114,28 @@ const Bubble = () => {
         </div>
       </nav>
       {/* nav toogle section  */}
+
       <div
         className={` ${
           isOpen ? "block" : "hidden"
         }  md:hidden text-end text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
       >
-        <a className="mr-5 block hover:text-yellow-200" href="#">
+        <a
+          onClick={inHome}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
           Home
         </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          About
-        </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          Contact
+        <a
+          onClick={inBubble}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
+          AboutGame
         </a>
       </div>
+
       {/* main section  */}
       <div className=" bg-linear-to-r from-gray-400 via-pink-500 to-rose-400 w-96 sm:w-150  md:w-200 h-180 sm:h-120 md:h-120 lg:h-150 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
         <div className="flex justify-center items-center h-20 text-5xl font-bold">

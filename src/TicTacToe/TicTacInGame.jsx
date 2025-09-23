@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const TicTacInGame = () => {
+const TicTacInGame = ({ inHome, inTicTac }) => {
   const [isOpen, setOpen] = useState(false);
   const [putValue, setPutValue] = useState(Array(9).fill(""));
   const [currentValue, setCurrentValue] = useState("X");
@@ -75,7 +75,7 @@ const TicTacInGame = () => {
             src="./homePageImg/gameLogo.png"
             alt=""
           />
-           <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
+          <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
             <span className=" font-extrabold text-3xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
@@ -92,14 +92,15 @@ const TicTacInGame = () => {
         </div>
         <div>
           <div className="hidden md:block text-xl font-bold mt-4">
-            <a className="mr-5 hover:text-green-700" href="#">
+            <a onClick={inHome} className="mr-5 hover:text-green-700" href="#">
               Home
             </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              About
-            </a>
-            <a className="mr-5 hover:text-green-700" href="#">
-              Contact
+            <a
+              onClick={inTicTac}
+              className="mr-5 hover:text-green-700"
+              href="#"
+            >
+              AboutGame
             </a>
           </div>
 
@@ -114,19 +115,25 @@ const TicTacInGame = () => {
           </button>
         </div>
       </nav>
+
       <div
         className={` ${
           isOpen ? "block" : "hidden"
         }  md:hidden text-end text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
       >
-        <a className="mr-5 block hover:text-yellow-200" href="#">
+        <a
+          onClick={inHome}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
           Home
         </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          About
-        </a>
-        <a className="mr-5 block hover:text-yellow-200" href="#">
-          Contact
+        <a
+          onClick={inTicTac}
+          className="mr-5 block hover:text-green-700"
+          href="#"
+        >
+          AboutGame
         </a>
       </div>
 
