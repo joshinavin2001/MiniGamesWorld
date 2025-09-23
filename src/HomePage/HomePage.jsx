@@ -15,12 +15,12 @@ const HomePage = ({ startTicTac, startDice, startBubble }) => {
             src="./homePageImg/gameLogo.png"
             alt=""
           />
-          <h1 className="text-lg sm:text-xl md-text-3xl font-bold">
-            <span className=" font-extrabold text-xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
+          <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
+            <span className=" font-extrabold text-3xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
             iniGamesWorl
-            <span className="font-extrabold text-xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
+            <span className="font-extrabold text-3xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
               D
             </span>{" "}
           </h1>
@@ -57,7 +57,7 @@ const HomePage = ({ startTicTac, startDice, startBubble }) => {
       <div
         className={` ${
           isOpen ? "block" : "hidden"
-        }  md:hidden text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
+        }  md:hidden text-xl text-end font-bold bg-zinc-800 text-white py-2 pl-2`}
       >
         <a className="mr-5 block hover:text-yellow-200" href="#">
           Home
@@ -69,12 +69,12 @@ const HomePage = ({ startTicTac, startDice, startBubble }) => {
           Contact
         </a>
       </div>
-        {/* main section  */}
-      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-90 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
+      {/* main section  */}
+      <div className=" bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 w-98 sm:w-150  md:w-200 h-260 sm:h-120 md:h-120 lg:h-120 lg:w-250 xl:w-280  m-auto border-l-4 border-r-4 border-b-4 ">
         <div className="flex justify-center items-center  mb-4 mr-5  sm:mb-10 text-center">
           <img className="w-25 h-25" src="./homePageImg/BulbLogo.png" alt="" />
           <h1 className="sm:text-5xl text-2xl font-bold bg-gradient-to-r from-yellow-300 to-black bg-clip-text text-transparent italic">
-            Welcome to MiniGamesWorld
+            Welcome to MiniGamesWorLD
           </h1>
           <img
             className="w-18 h-18 mt-2"
@@ -82,7 +82,7 @@ const HomePage = ({ startTicTac, startDice, startBubble }) => {
             alt=""
           />
         </div>
-          {/* all games section  */}
+        {/* all games section  */}
         <section className="w-1/2 ml-16 sm:flex sm:justify-evenly  sm:w-auto sm:mx-0">
           <div className="text-center h-70 w-54 border-2 rounded py-2 mb-5 sm:mb-0">
             <h1 className="text-3xl font-bold">Dice Game</h1>

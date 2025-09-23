@@ -75,12 +75,12 @@ const TicTacInGame = () => {
             src="./homePageImg/gameLogo.png"
             alt=""
           />
-          <h1 className="text-lg sm:text-xl md-text-3xl font-bold">
-            <span className=" font-extrabold text-xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
+           <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
+            <span className=" font-extrabold text-3xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
             iniGamesWorl
-            <span className="font-extrabold text-xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
+            <span className="font-extrabold text-3xl md:text-3xl lg:text-5xl sm:text-2xl bg-gradient-to-r from-black to-white bg-clip-text text-transparent">
               D
             </span>{" "}
           </h1>
@@ -117,7 +117,7 @@ const TicTacInGame = () => {
       <div
         className={` ${
           isOpen ? "block" : "hidden"
-        }  md:hidden text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
+        }  md:hidden text-end text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
       >
         <a className="mr-5 block hover:text-yellow-200" href="#">
           Home
