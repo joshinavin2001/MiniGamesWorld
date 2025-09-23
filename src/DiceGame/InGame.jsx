@@ -47,7 +47,7 @@ const InGame = () => {
             src="./homePageImg/gameLogo.png"
             alt=""
           />
-          <h1 className="text-lg sm:text-xl md-text-3xl font-bold">
+          <h1 className="text-lg sm:text-xl md-text-3xl mt-1 md:mt-0 font-bold">
             <span className=" font-extrabold text-xl md:text-3xl lg:text-5xl  sm:text-2xl bg-gradient-to-r from-white to-black bg-clip-text text-transparent">
               M
             </span>
@@ -89,7 +89,7 @@ const InGame = () => {
       <div
         className={` ${
           isOpen ? "block" : "hidden"
-        }  md:hidden text-xl font-bold bg-zinc-800 text-white py-2 pl-2`}
+        }  md:hidden text-xl font-bold bg-zinc-800 text-end text-white py-2 pl-2`}
       >
         <a className="mr-5 block hover:text-yellow-200" href="#">
           Home
@@ -143,9 +143,29 @@ const InGame = () => {
         {/* dice game section  */}
         <div className="flex justify-center mt-4">
           <div>
-            <div className="text-black text-4xl ml-9  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2">
+             <div className={`text-black text-4xl ml-10 ${showText?"hidden":"block"}  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2`}>
               <h1>Dice Game</h1>
             </div>
+            <div className={`text-black ${showText?"block":"hidden"} text-4xl ml-22  lg:ml-0 sm:text-4xl font-bold lg:text-5xl mb-2`}>
+              <h1>Dice Game</h1>
+            </div>
+
+
+                <div
+          className={` bg-zinc-800 text-white p-4 rounded mt-4 mx-5 ${
+            showText ? "block" : "hidden"
+          } `}
+        >
+          <h1 className="text-4xl font-semibold mb-5">How To Play Dice Game</h1>
+          <p>Selcet Any Number</p>
+          <p>Click On Dice Image</p>
+          <p>
+            After click on dice if selected number is equal to dice number you
+            will get same point as dice{" "}
+          </p>
+          <p>If you get wrong guess then 2 point will be dedcuted </p>
+        </div>
+           
 
             <img
               className="cursor-pointer"
@@ -155,6 +175,7 @@ const InGame = () => {
               }.png`}
               alt=""
             />
+         
             <p
               className={` ${
                 showText ? "hidden" : "block"
@@ -183,7 +204,7 @@ const InGame = () => {
                 onClick={() => setShowText(!showText)}
                 className={`bg-black ${
                   showText ? "block" : "hidden"
-                } text-white py-1 px-8 mt-2 rounded cursor-pointer active:scale-90 ml-14 sm:ml-12 md:ml-12`}
+                } text-white py-1 px-8 mt-2 rounded cursor-pointer active:scale-90 ml-25 sm:ml-12 md:ml-12`}
               >
                 Hide Rules
               </button>
@@ -191,20 +212,11 @@ const InGame = () => {
           </div>
         </div>
 
-        <div
-          className={` bg-zinc-800 text-white p-4 rounded mt-4 mx-5 ${
-            showText ? "block" : "hidden"
-          } `}
-        >
-          <h1 className="text-4xl font-semibold mb-5">How To Play Dice Game</h1>
-          <p>Selcet Any Number</p>
-          <p>Click On Dice Image</p>
-          <p>
-            After click on dice if selected number is equal to dice number you
-            will get same point as dice{" "}
-          </p>
-          <p>If you get wrong guess then 2 point will be dedcuted </p>
-        </div>
+
+
+
+
+
       </div>
       {/* footer section  */}
       <footer className="bg-linear-to-r from-yellow-200 via-amber-400 to-orange-600 text-zinc-950 py-10 mt-5 ">
